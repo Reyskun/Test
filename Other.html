@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CrossWorth – Pictures</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(180deg, #f9eaff, #e9f3ff, #ffeef7);
+        color: #6a5e80;
+    		opacity: 0;
+    		transition: opacity 0.5s ease;
+    }
+
+		body.fade-in {
+    		opacity: 1;
+		}
+
+		.fade-out {
+    		opacity: 0;
+    		transition: opacity 0.5s ease;
+		}
+
+
+    .page {
+        max-width: 850px;
+        margin: 30px auto;
+        background: rgba(255,255,255,0.7);
+        border-radius: 30px;
+        padding: 30px;
+        backdrop-filter: blur(15px);
+        border: 1px solid rgba(255,255,255,0.8);
+        box-shadow: 0 15px 40px rgba(180,130,255,0.20);
+    }
+
+    .title {
+        text-align: center;
+        font-size: 40px;
+        font-weight: 700;
+        color: transparent;
+        background: linear-gradient(90deg, #d98fff, #ff8ecf);
+        -webkit-background-clip: text;
+        margin-bottom: 25px;
+    }
+
+    /* Navigation */
+    .nav {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-bottom: 30px;
+    }
+    .nav a {
+        padding: 10px 25px;
+        border-radius: 20px;
+        font-size: 14px;
+        background: linear-gradient(90deg, #ffb7e6, #ffd6a5);
+        color: white;
+        border: none;
+        cursor: pointer;
+        box-shadow: 0 4px 10px rgba(255,150,200,0.3);
+    }
+
+    .content {
+        margin-top: 20px;
+    }
+
+    /* 3-image grid */
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+    }
+
+    .gallery img {
+        width: 90%;
+        height: 90%; 
+        object-fit: cover;
+        border-radius: 15px;
+        box-shadow: 0 5px 14px rgba(180,150,255,0.25);
+        border: 4px solid white;
+        background: #fff;
+    }
+
+    .footer {
+        text-align: center;
+        margin-top: 25px;
+        font-size: 13px;
+        opacity: 0.6;
+    }
+
+    /* mobile responsive */
+    @media (max-width: 600px) {
+        .gallery {
+            grid-template-columns: 1fr 1fr; /* 2 per row on phones */
+        }
+    }
+</style>
+
+</head>
+<body>
+
+<div class="page">
+
+    <div class="title">Other</div>
+
+	<nav class="nav">
+  		<a href="Home.html">Home</a>
+  		<a href="Picture.html">Picture</a>
+  		<a href="Video.html">Video</a>
+  		<a href="Other.html">Other</a>
+	</nav>
+      <h3>✦ Music ✦</h3>
+
+    <div class="content">
+
+        <div class="gallery">
+    			<a href="https://youtu.be/eaJricjjUiE?si=2Z4_O5u029In11qK">
+        			<img src="Alasanku-di-sini.png">
+    			</a>
+
+   			<a href=" ">
+        			<img src="Like-u.png">
+  				</a>
+
+   			<a href="https://youtu.be/1hGqeUOKiWo?si=CRMLPRFzzCI4ZhZR">
+        			<img src="This-feeling.png">
+  				</a>
+
+   			<a href="https://youtu.be/ThV8T0Y5hHM?si=MzuehrcIUovGL1TQ">
+        			<img src="Better-with-you.png">
+  				</a>
+
+   			<a href=" ">
+        			<img src="Rainbow-road.png">
+  				</a>
+
+   			<a href="https://youtu.be/2q0zwwLHQ3Y?si=gf_AMsSDpp5n9nAm">
+        			<img src="Reality-trail.png">
+  				</a>
+
+        </div>
+
+    </div>
+
+    <div class="footer">by CrossWorth</div>
+
+</div>
+
+
+<script>
+// Fade in when the page loads
+window.addEventListener("load", () => {
+    document.body.classList.add("fade-in");
+});
+
+// Animate transition on navigation clicks
+document.addEventListener("DOMContentLoaded", () => {
+    const links = document.querySelectorAll("a[href]");
+
+    links.forEach(link => {
+        link.addEventListener("click", function (e) {
+            const url = this.getAttribute("href");
+
+            // Avoid empty or same-page links
+            if (!url || url.startsWith("#")) return;
+
+            e.preventDefault();
+
+            document.body.classList.add("fade-out");
+
+            setTimeout(() => {
+                window.location.href = url;
+            }, 500); // match fade-out duration
+        });
+    });
+});
+</script>
+
+</body>
+</html>

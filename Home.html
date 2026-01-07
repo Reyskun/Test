@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CrossWorth</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(180deg, #f9eaff, #e9f3ff, #ffeef7);
+        color: #6a5e80;
+    		opacity: 0;
+    		transition: opacity 0.5s ease;
+    }
+
+		body.fade-in {
+    		opacity: 1;
+		}
+
+		.fade-out {
+    		opacity: 0;
+    		transition: opacity 0.5s ease;
+		}
+
+    .page {
+        max-width: 850px; /* smaller width */
+        margin: 30px auto;
+        background: rgba(255,255,255,0.7);
+        border-radius: 30px; /* smaller radius */
+        padding: 30px;       /* smaller padding */
+        backdrop-filter: blur(15px);
+        border: 1px solid rgba(255,255,255,0.8);
+        box-shadow: 0 15px 40px rgba(180,130,255,0.20);
+    }
+
+    .title {
+        text-align: center;
+        font-size: 40px; /* smaller */
+        font-weight: 700;
+        color: transparent;
+        background: linear-gradient(90deg, #d98fff, #ff8ecf);
+        -webkit-background-clip: text;
+        margin-bottom: 25px;
+    }
+
+    .nav {
+        display: flex;
+        justify-content: center;
+        gap: 15px; /* smaller gap */
+        margin-bottom: 30px;
+    }
+
+    .nav a {
+        padding: 10px 25px; /* smaller */
+        border-radius: 20px;
+        font-size: 14px;
+        background: linear-gradient(90deg, #ffb7e6, #ffd6a5);
+        color: white;
+        border: none;
+        cursor: pointer;
+        box-shadow: 0 4px 10px rgba(255,150,200,0.3);
+    }
+
+    .content {
+        display: grid;
+        grid-template-columns: 230px 1fr; /* smaller sidebar */
+        gap: 25px; /* smaller gap */
+    }
+
+    .sidebar {
+        background: rgba(255,255,255,0.75);
+        border-radius: 25px;
+        padding: 15px;
+        text-align: center;
+        box-shadow: 0 6px 15px rgba(200,160,255,0.2);
+    }
+
+    .avatar {
+        width: 140px;   /* smaller */
+        height: 140px;  /* smaller */
+        border-radius: 50%;
+        object-fit: cover;
+        border: 4px solid white;
+        box-shadow: 0 0 15px rgba(210,150,255,0.35);
+    }
+
+    .banner {
+        width: 250px; /* smaller */
+        height: 140px;
+        object-fit: cover;
+        border: 4px solid white;
+        box-shadow: 0 0 15px rgba(210,150,255,0.35);
+        border-radius: 15px;
+    }
+
+    .socials {
+        display: flex;
+        flex-direction: column;
+        gap: 10px; /* smaller */
+        margin-top: 12px;
+    }
+
+    .social-btn {
+        background: rgba(255,255,255,0.85);
+        padding: 10px;
+        border-radius: 15px;
+        font-size: 15px; /* smaller text */
+        color: #6a5e80;
+        text-decoration: none;
+        box-shadow: 0 4px 12px rgba(200,160,255,0.25);
+    }
+
+    .card {
+        background: rgba(255,255,255,0.9);
+        padding: 18px; /* smaller */
+        border-radius: 18px;
+        margin-bottom: 18px;
+        box-shadow: 0 4px 15px rgba(180,150,255,0.2);
+    }
+
+    .card h3 {
+        font-size: 18px; /* smaller */
+        margin-bottom: 6px;
+        color: #b871ff;
+        font-weight: 700;
+    }
+
+    .card p {
+        font-size: 14px; /* smaller text */
+    }
+
+    .footer {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 12px;
+        opacity: 0.6;
+    }
+</style>
+
+
+</head>
+<body>
+
+<div class="page">
+
+    <div class="title">CrossWorth</div>
+
+	<nav class="nav">
+  		<a href="Home.html">Home</a>
+  		<a href="Picture.html">Picture</a>
+  		<a href="Video.html">Video</a>
+  		<a href="Other.html">Other</a>
+	</nav>
+
+    <div class="content">
+
+        <!-- Left Column -->
+        <div class="sidebar">
+            <img src="Profile.png" class="avatar">
+
+<div class="socials">
+    <a href= https://www.instagram.com/cross.worth?igsh=emRlcmVkZHh3MXFl&utm_source=qr class="social-btn">Instagram</a>
+    <a class="social-btn">Discord</a>
+    <a href= https://youtube.com/@crossworth1?si=MBdl_TK_XWbo5qAt class="social-btn">Youtube</a>
+</div>
+        </div>
+
+        <!-- Right Column -->
+        <div>
+
+            <div class="card">
+            		<h3>✦ CrossWorth ✦</h3>
+                	<p>
+							A Graphic Designer Enthusiast, Ilustrator and have some small experience on website programming
+						</p>
+						  <h3>✦ Bio ✦</h3>
+						<p>Age: 17 </p>
+						<p>Gender: Male</p>
+						<p>Live: Indonesia</p>
+						<p>Interest: Anime, Drawing, Design Graphic, Music, Minecraft, Basic Enginerring Process, Gacha Game</p>
+            </div>
+
+            <div class="card">
+                <h3>Update</h3>
+                <p>CrossWorth has release a new Illustration</p>
+						<img src="Banner.png" class="banner">
+            </div>
+
+        </div>
+    </div>
+
+    <div class="footer">by CrossWorth</div>
+
+</div>
+
+<script>
+// Fade in when the page loads
+window.addEventListener("load", () => {
+    document.body.classList.add("fade-in");
+});
+
+// Animate transition on navigation clicks
+document.addEventListener("DOMContentLoaded", () => {
+    const links = document.querySelectorAll("a[href]");
+
+    links.forEach(link => {
+        link.addEventListener("click", function (e) {
+            const url = this.getAttribute("href");
+
+            // Avoid empty or same-page links
+            if (!url || url.startsWith("#")) return;
+
+            e.preventDefault();
+
+            document.body.classList.add("fade-out");
+
+            setTimeout(() => {
+                window.location.href = url;
+            }, 500); // match fade-out duration
+        });
+    });
+});
+</script>
+
+
+</body>
+</html>
+
